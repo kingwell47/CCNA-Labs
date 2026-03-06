@@ -1,12 +1,14 @@
 ![JITL Megalab Completed Topology](/jitl-megalab-topology.png)
 
-# **🚀 The CCNA Mega Lab: Full Enterprise Deployment**
+# **🚀 The JITL CCNA Mega Lab: Full Enterprise Deployment**
 
-Welcome to the "final boss" of my CCNA preparation. This repository contains my completed **Cisco Packet Tracer Mega Lab**, a comprehensive project that touches nearly every configuration topic required for the **Cisco CCNA 200-301** exam.
+Welcome to the "final boss" of my CCNA preparation. This repository contains my completed **JITL Cisco Packet Tracer Mega Lab**, a comprehensive project that touches nearly every configuration topic required for the **Cisco CCNA 200-301** exam.
 
 ## **📖 Project Overview**
 
 This isn't just a simple lab; it’s a simulation of a multi-site enterprise network featuring a **Core, Distribution, and Access** layer hierarchy. The project involved configuring everything from the ground up, starting with basic device hardening and ending with complex IPv6 routing and Wireless LAN Controller (WLC) setups.
+
+Shoutout to **[Jeremy's IT Labs](https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ)** for providing a great (not to mention FREE) resource!
 
 ### **Key Network Highlights:**
 
