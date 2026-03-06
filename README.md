@@ -67,7 +67,7 @@ Completing a lab of this scale taught me that networking is 10% typing commands 
 ## **📁 Repository Contents**
 
 - jitl-mega-lab-completed.pkt: The final, 100% completed Packet Tracer file.
-  - username: cisco
-  - password: ccna
-  - enable secret: jeremysitlab
+  - u: cisco
+  - p: ccna
+  - en: jeremysitlab
 - /configs: Individual .txt files containing the show run for every Router and Switch.
