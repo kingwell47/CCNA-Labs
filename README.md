@@ -34,7 +34,7 @@ Shoutout to **[Jeremy's IT Labs](https://www.youtube.com/playlist?list=PLxbwE86j
 ### **Security & Administration**
 
 - **Access Control:** Deployed **Standard and Extended ACLs** to restrict SSH management access and control inter-office traffic.
-- **Device Hardening:** Used **Type 9 (scrypt)** hashing for all passwords, configured synchronous logging, and set 30-minute inactivity timeouts on all console lines.
+- **Device Hardening:** Used **Type 9 (scrypt)** hashing for passwords (if available), configured synchronous logging, and set 30-minute inactivity timeouts on all console lines.
 
 ## **🎓 What I Learned (The "Aha\!" Moments)**
 
