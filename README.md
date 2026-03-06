@@ -1,10 +1,12 @@
-**🚀 The CCNA Mega Lab: Full Enterprise Deployment**
+![JITL Megalab Completed Topology](/jitl-megalab-topology.png)
+
+# **🚀 The CCNA Mega Lab: Full Enterprise Deployment**
 
 Welcome to the "final boss" of my CCNA preparation. This repository contains my completed **Cisco Packet Tracer Mega Lab**, a comprehensive project that touches nearly every configuration topic required for the **Cisco CCNA 200-301** exam.
 
 ## **📖 Project Overview**
 
-This isn't just a simple lab; it’s a simulation of a multi-site enterprise network featuring a **Core, Distribution, and Access** layer hierarchy. The project involved configuring everything from the ground up—starting with basic device hardening and ending with complex IPv6 routing and Wireless LAN Controller (WLC) setups.
+This isn't just a simple lab; it’s a simulation of a multi-site enterprise network featuring a **Core, Distribution, and Access** layer hierarchy. The project involved configuring everything from the ground up, starting with basic device hardening and ending with complex IPv6 routing and Wireless LAN Controller (WLC) setups.
 
 ### **Key Network Highlights:**
 
@@ -13,9 +15,7 @@ This isn't just a simple lab; it’s a simulation of a multi-site enterprise net
 - **Dynamic Routing:** Orchestrated **OSPF Area 0** across all Layer-3 switches and routers, including manual Router ID (RID) assignments and passive interface tuning.
 - **Secure Infrastructure:** Hardened the network using **SSHv2**, **DHCP Snooping**, **Dynamic ARP Inspection (DAI)**, and **Port Security**.
 
-## ---
-
-**🛠️ Technical Deep Dive**
+## **🛠️ Technical Deep Dive**
 
 ### **Layer 2: Switching & Logic**
 
@@ -34,9 +34,7 @@ This isn't just a simple lab; it’s a simulation of a multi-site enterprise net
 - **Access Control:** Deployed **Standard and Extended ACLs** to restrict SSH management access and control inter-office traffic.
 - **Device Hardening:** Used **Type 9 (scrypt)** hashing for all passwords, configured synchronous logging, and set 30-minute inactivity timeouts on all console lines.
 
-## ---
-
-**🎓 What I Learned (The "Aha\!" Moments)**
+## **🎓 What I Learned (The "Aha\!" Moments)**
 
 Completing a lab of this scale taught me that networking is 10% typing commands and 90% planning and troubleshooting. Here are the biggest takeaways from the process:
 
@@ -64,10 +62,7 @@ Completing a lab of this scale taught me that networking is 10% typing commands 
 
 - This lab taught me to trust my configurations but verify the hardware. I encountered Packet Tracer "bugs" where domain names or ACLs wouldn't save correctly, which taught me to use show commands to double-check the actual state of the device regardless of what I just typed.
 
-## ---
+## **📁 Repository Contents**
 
-**📁 Repository Contents**
-
-- mega-lab-completed.pkt: The final, 100% completed Packet Tracer file.
+- jitl-mega-lab-completed.pkt: The final, 100% completed Packet Tracer file.
 - /configs: Individual .txt files containing the show run for every Router and Switch.
-- /topology: High-resolution diagrams of the network layout.
