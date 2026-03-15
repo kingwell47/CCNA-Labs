@@ -127,3 +127,44 @@ After configuration, the following tests were performed:
 - Spanning Tree selected the expected root bridge
 
 Example verification commands used:
+
+```
+show vlan brief
+show etherchannel summary
+show spanning-tree
+show ip interface brief
+```
+
+---
+
+## Skills Practiced
+
+This lab helped reinforce practical knowledge of:
+
+- VLAN design and segmentation
+- Layer 2 switching configuration
+- Inter-VLAN routing
+- Link aggregation
+- DHCP deployment
+- Network verification and troubleshooting
+
+---
+
+## Files Included
+
+- EVE-NG topology file
+- Lab documentation
+- Verification screenshots
+
+---
+
+## Notes
+
+This lab is part of the **Enterprise Network Deployment Series**, which gradually expands the network to include:
+
+- Branch office connectivity
+- Dynamic routing with OSPF
+- Internet edge configuration
+- Security policies and redundancy
+
+Future labs will build on this topology.
