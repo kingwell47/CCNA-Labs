@@ -1,4 +1,4 @@
-![JITL Megalab Completed Topology](/jitl-megalab-topology.png)
+![JITL Megalab Completed Topology](./jitl-megalab-topology.png)
 
 # **🚀 The JITL CCNA Mega Lab: Full Enterprise Deployment**
 
