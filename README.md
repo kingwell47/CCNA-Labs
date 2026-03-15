@@ -1,73 +1,163 @@
-![JITL Megalab Completed Topology](/jitl-megalab-topology.png)
+![Lab 1 in Eve-NG](/lab01.png)
 
-# **🚀 The JITL CCNA Mega Lab: Full Enterprise Deployment**
+# CCNA Networking Labs
 
-Welcome to the "final boss" of my CCNA preparation. This repository contains my completed **JITL Cisco Packet Tracer Mega Lab**, a comprehensive project that touches nearly every configuration topic required for the **Cisco CCNA 200-301** exam.
+Welcome! 👋
 
-## **📖 Project Overview**
+This repository contains the networking labs I built before and after studying for the **Cisco Certified Network Associate (CCNA)**. My goal here is to document hands-on practice with networking concepts and to build a portfolio that shows how I approach network design, configuration, and troubleshooting.
 
-This isn't just a simple lab; it’s a simulation of a multi-site enterprise network featuring a **Core, Distribution, and Access** layer hierarchy. The project involved configuring everything from the ground up, starting with basic device hardening and ending with complex IPv6 routing and Wireless LAN Controller (WLC) setups.
+Most of these labs are based on scenarios that simulate small enterprise networks, the kind of environments a junior network engineer might encounter in real deployments.
 
-Shoutout to **[Jeremy's IT Labs](https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ)** for providing a great (not to mention FREE) resource!
+I'm currently building practical networking experience through self-study, lab work, and real configuration practice.
 
-### **Key Network Highlights:**
+---
 
-- **Dual-Office Architecture:** Integrated two distinct office campuses (Office A and Office B) with a central Core layer.
-- **Redundancy & High Availability:** Implemented **HSRPv2** across all VLANs and **EtherChannels** (both L2 and L3) to ensure no single point of failure.
-- **Dynamic Routing:** Orchestrated **OSPF Area 0** across all Layer-3 switches and routers, including manual Router ID (RID) assignments and passive interface tuning.
-- **Secure Infrastructure:** Hardened the network using **SSHv2**, **DHCP Snooping**, **Dynamic ARP Inspection (DAI)**, and **Port Security**.
+## Lab Platforms 🥼
 
-## **🛠️ Technical Deep Dive**
+The labs in this repository were built using:
 
-### **Layer 2: Switching & Logic**
+- Cisco Packet Tracer
+- EVE-NG
+- VPCS (Virtual PC Simulator)
 
-- **VLAN/VTP Management:** Managed a multi-VLAN environment (PCs, Phones, Wi-Fi, Servers, and Management) using **VTPv2** to ensure consistency across the access layer.
-- **Spanning Tree (Rapid PVST+):** Fine-tuned STP priorities so the **Root Bridge** always aligns with the **HSRP Active router** for optimal traffic flow.
-- **Trunking:** Manually configured 802.1Q trunks, disabled DTP for security, and utilized a non-default native VLAN (VLAN 1000).
+Packet Tracer is useful for quickly testing ideas and learning concepts, while **EVE-NG** allows me to run more realistic Cisco images and build larger topologies.
 
-### **Layer 3: Routing & Services**
+---
 
-- **Hybrid Routing:** Combined OSPF for internal reachability with **floating static routes** for redundant Internet edge failover.
-- **Network Services:** Configured the head-end router (R1) as a **DHCP Server** for seven different pools and an **NTP Stratum 5 server**.
-- **NAT/PAT:** Implemented static NAT for server access and pool-based PAT (overloading) for internal host internet access.
+## Repository Structure 🏗️
 
-### **Security & Administration**
+```
+ccna-labs/
+│
+├── 00 jitl-megalab/
+│
+├── 01 enterprise-network-series/
+│   ├── lab1-campus-network-segmentation/
+│   ├── lab2-branch-network-ospf/
+│   └── lab3-enterprise-edge-security/
+│
+└── additional-labs/ (future labs)
+```
 
-- **Access Control:** Deployed **Standard and Extended ACLs** to restrict SSH management access and control inter-office traffic.
-- **Device Hardening:** Used **Type 9 (scrypt)** hashing for passwords (if available), configured synchronous logging, and set 30-minute inactivity timeouts on all console lines.
+Each lab folder may include:
 
-## **🎓 What I Learned (The "Aha\!" Moments)**
+- topology files (Packet Tracer / EVE-NG)
+- addressing tables
+- lab documentation
+- verification screenshots
+- notes and troubleshooting observations
 
-Completing a lab of this scale taught me that networking is 10% typing commands and 90% planning and troubleshooting. Here are the biggest takeaways from the process:
+---
 
-### **1\. The Power of Pre-Staging Configs**
+## Labs 🚀
 
-- I learned that entering commands directly into the CLI is a recipe for typos in a large environment.
-- I shifted to building my configurations in **Notepad** first. This is a more practical "real-world" approach that reduced my error rate and made it easier to audit my own work.
+### JITL MegaLab 📢
 
-### **2\. Strategic Traffic Flow with STP and HSRP**
+A large practice lab designed to bring together many CCNA topics in a single network.
 
-- I learned how to align Layer 2 and Layer 3 redundancy. By configuring the **STP Root Bridge** priority to match the **HSRP Active router**, I ensured that traffic doesn't take an inefficient "scenic route" through the standby switch.
-- I practiced using **preemption** to ensure that once a primary switch recovers, it automatically reassumes its role as the active gateway.
+Topics explored include:
 
-### **3\. Managing Service Dependencies**
+- VLAN configuration
+- Inter-VLAN routing
+- Static routing
+- DHCP
+- NAT
+- Access Control Lists
+- Routing protocols
 
-- I realized how many services rely on a rock-solid **IP Helper Address**. I had to configure these on the SVI interfaces so that broadcast DHCP requests from PCs could actually reach the DHCP server (R1) across different subnets.
-- I learned the importance of **NTP synchronization** for logging; without a consistent time source across all routers and switches, your Syslog data becomes nearly impossible to correlate during an audit.
+This lab helped reinforce how different technologies interact within a single network.
 
-### **4\. Security is a Layered Effort**
+---
 
-- It’s not just about one firewall at the edge. I learned to implement **Defense in Depth** by using **Port Security** at the access port, **DHCP Snooping** to block rogue servers, and **DAI** to prevent ARP poisoning.
-- I also learned the "Best Practice" for ACLs: applying **Extended ACLs** as close to the source as possible to save network bandwidth.
+### Enterprise Network Deployment Series 💼
 
-### **5\. Troubleshooting "Quirky" Infrastructure**
+A progressive lab series simulating the deployment of a small enterprise network.
 
-- This lab taught me to trust my configurations but verify the hardware. I encountered Packet Tracer "bugs" where domain names or ACLs wouldn't save correctly, which taught me to use show commands to double-check the actual state of the device regardless of what I just typed.
+---
 
-## **📁 Repository Contents**
+#### Lab 1 – Campus Network Segmentation
 
-- jitl-mega-lab-completed.pkt: The final, 100% completed Packet Tracer file.
-  - u: cisco
-  - p: ccna
-  - en: jeremysitlab
-- /configs: Individual .txt files containing the show run for every Router and Switch.
+Platform: **EVE-NG**
+
+Technologies practiced:
+
+- VLANs
+- Inter-VLAN routing
+- Trunking
+- EtherChannel
+- DHCP
+- Port security
+- Spanning Tree concepts
+
+This lab simulates a **headquarters campus network** where multiple departments are segmented into VLANs while still allowing communication through a multilayer switch.
+
+---
+
+#### Lab 2 – Branch Office Network _(In Progress)_
+
+Technologies explored:
+
+- OSPF
+- WAN connectivity
+- DHCP relay
+- IPv6 dual-stack networking
+
+This lab expands the enterprise network by connecting a **remote branch office** using dynamic routing.
+
+---
+
+#### Lab 3 – Enterprise Edge and Security _(Planned)_
+
+Technologies planned:
+
+- NAT / PAT
+- Access Control Lists
+- HSRP
+- Edge routing
+- Guest network isolation
+
+This lab will simulate connecting the enterprise network to the **internet edge while implementing security policies and redundancy**.
+
+---
+
+## Skills Practiced 🎯
+
+Through these labs I am actively practicing:
+
+- Network segmentation with VLANs
+- Layer 2 switching concepts
+- Inter-VLAN routing
+- Dynamic routing protocols
+- WAN connectivity
+- Network security policies
+- Network verification and troubleshooting
+
+---
+
+## Future Labs 🔮
+
+I plan to continue expanding this repository with additional labs covering topics like:
+
+- advanced OSPF scenarios
+- STP tuning and optimization
+- network redundancy
+- troubleshooting-focused labs
+- larger enterprise network simulations
+
+---
+
+## Why This Repository Exists 📝
+
+This repository serves as:
+
+- a personal study archive
+- a networking practice log
+- a portfolio demonstrating hands-on networking experience
+
+Networking is one of those skills where **actually configuring and breaking things in a lab teaches far more than just reading about it**, so this repo is where I keep track of that journey.
+
+---
+
+## Disclaimer ⚡
+
+These labs are created for educational purposes and may simplify some aspects of real production network design.
