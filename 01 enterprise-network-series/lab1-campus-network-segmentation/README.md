@@ -64,6 +64,29 @@ The default gateways for all VLANs are configured on the **multilayer switch**.
 
 ## Device Layout
 
+All switches are running the Cisco IOL image:
+
+```
+Cisco IOS Software, Solaris Software (I86BI_LINUXL2-ADVENTERPRISEK9-M)
+Experimental Version 15.1
+```
+
+This platform supports the features required for the lab, including:
+
+VLANs
+
+802.1Q trunking
+
+EtherChannel
+
+Spanning Tree
+
+Port security
+
+Layer 3 routing (when IP routing is enabled)
+
+This makes it suitable for building a core-access campus topology within EVE-NG.
+
 Access Switch 1 – Administration
 
 - Management PCs
@@ -80,6 +103,81 @@ Access Switch 3 – Public Area
 - Additional IT workstations
 
 The **Server** is located in the IT VLAN.
+
+---
+
+## Interface Allocation Table
+
+The following tables document the physical connections between devices in the topology.
+
+### Core Switch (CSW1)
+
+| Device | Interface | Connected To | Remote Interface | Purpose             |
+| ------ | --------- | ------------ | ---------------- | ------------------- |
+| CSW1   | E0/0      | ASW1         | E0/0             | EtherChannel uplink |
+| CSW1   | E0/1      | ASW1         | E0/1             | EtherChannel uplink |
+| CSW1   | E0/2      | ASW2         | E0/0             | EtherChannel uplink |
+| CSW1   | E0/3      | ASW2         | E0/1             | EtherChannel uplink |
+| CSW1   | E1/0      | ASW3         | E0/0             | EtherChannel uplink |
+| CSW1   | E1/1      | ASW3         | E0/1             | EtherChannel uplink |
+| CSW1   | E1/3      | Server       | Eth0             | Server connection   |
+
+---
+
+### Access Switch 1 (ASW1)
+
+| Device | Interface | Connected To | Remote Interface | VLAN         |
+| ------ | --------- | ------------ | ---------------- | ------------ |
+| ASW1   | E5/0      | PC1          | Eth0             | Management   |
+| ASW1   | E5/1      | PC2          | Eth0             | Management   |
+| ASW1   | E4/0      | PC3          | Eth0             | HR           |
+| ASW1   | E4/2      | PC4          | Eth0             | HR           |
+| ASW1   | E4/1      | PC5          | Eth0             | HR           |
+| ASW1   | E0/0      | CSW1         | E0/0             | EtherChannel |
+| ASW1   | E0/1      | CSW1         | E0/1             | EtherChannel |
+
+---
+
+### Access Switch 2 (ASW2)
+
+| Device | Interface | Connected To | Remote Interface | VLAN         |
+| ------ | --------- | ------------ | ---------------- | ------------ |
+| ASW2   | E5/0      | PC6          | Eth0             | IT           |
+| ASW2   | E5/1      | PC7          | Eth0             | IT           |
+| ASW2   | E5/2      | PC8          | Eth0             | IT           |
+| ASW2   | E3/0      | PC9          | Eth0             | Sales        |
+| ASW2   | E3/1      | PC10         | Eth0             | Sales        |
+| ASW2   | E3/2      | PC11         | Eth0             | Sales        |
+| ASW2   | E3/3      | PC12         | Eth0             | Sales        |
+| ASW2   | E0/0      | CSW1         | E0/0             | EtherChannel |
+| ASW2   | E0/1      | CSW1         | E0/1             | EtherChannel |
+
+---
+
+### Access Switch 3 (ASW3)
+
+| Device | Interface | Connected To | Remote Interface | VLAN         |
+| ------ | --------- | ------------ | ---------------- | ------------ |
+| ASW3   | E3/0      | PC13         | Eth0             | Guest        |
+| ASW3   | E3/1      | PC14         | Eth0             | Guest        |
+| ASW3   | E3/2      | PC15         | Eth0             | Guest        |
+| ASW3   | E3/3      | PC16         | Eth0             | Guest        |
+| ASW3   | E1/0      | PC17         | Eth0             | IT           |
+| ASW3   | E1/1      | PC18         | Eth0             | IT           |
+| ASW3   | E4/0      | PC19         | Eth0             | Guest        |
+| ASW3   | E4/1      | PC20         | Eth0             | Guest        |
+| ASW3   | E0/0      | CSW1         | E0/0             | EtherChannel |
+| ASW3   | E0/1      | CSW1         | E0/1             | EtherChannel |
+
+---
+
+### Port Channel Allocation
+
+| Port Channel   | Member Interfaces | Devices Connected |
+| -------------- | ----------------- | ----------------- |
+| Port-Channel 1 | E0/0, E0/1        | CSW1 ↔ ASW1       |
+| Port-Channel 2 | E0/2, E0/3        | CSW1 ↔ ASW2       |
+| Port-Channel 3 | E1/0, E1/1        | CSW1 ↔ ASW3       |
 
 ---
 
